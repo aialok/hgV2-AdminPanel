@@ -6,10 +6,11 @@ import {
 } from "../../utils/actionHandler";
 const storedToken = JSON.parse(localStorage.getItem("token"));
 
-// console.log("feeds",storedToken);
+
+
 const headers = {
-  // authorization: `Bearer ${storedToken}`,
-  authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ODQ0MTc4M2FjMTdhYzM0NzIwZjI4NCIsImlhdCI6MTcwMzE2NjUyMCwiZXhwIjoxNzA1NzU4NTIwfQ.dkDckQKAgVB93AXmSJNgYtrpIPZ8j3Lis33APxsx39c`,
+  authorization: `Bearer ${storedToken}`,
+  // authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ODQ0MTc4M2FjMTdhYzM0NzIwZjI4NCIsImlhdCI6MTcwMzE2NjUyMCwiZXhwIjoxNzA1NzU4NTIwfQ.dkDckQKAgVB93AXmSJNgYtrpIPZ8j3Lis33APxsx39c`,
 };
 
 const struct = (arr) => {

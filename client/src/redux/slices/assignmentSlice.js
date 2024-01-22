@@ -5,8 +5,10 @@ import {
   handlePendingAndRejected,
 } from "../../utils/actionHandler";
 
+const authToken = JSON.parse(localStorage.getItem('token'));
+
 const headers = {
-  authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ODQ0MTc4M2FjMTdhYzM0NzIwZjI4NCIsImlhdCI6MTcwMzE2NjUyMCwiZXhwIjoxNzA1NzU4NTIwfQ.dkDckQKAgVB93AXmSJNgYtrpIPZ8j3Lis33APxsx39c`,
+  authorization: `Bearer ${authToken}`,
 };
 
 const struct = (arr) => {

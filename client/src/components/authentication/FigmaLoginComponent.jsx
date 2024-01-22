@@ -51,15 +51,15 @@ function FigmaLoginComponent() {
   };
 
   return (
-    <div className="flex w-full min-h-screen max-sm:flex-col max-sm:items-center bg-bgTertiary">
-      <div className="left-container w-1/2 flex items-center justify-center">
+    <div className="flex w-full justify-center min-h-screen max-sm:flex-col max-sm:items-center bg-bgTertiary">
+      {/* <div className="left-container w-1/2 flex items-center justify-center">
         <img
           src={hgLogoSvg}
           alt="hglogo"
           width="375px"
           className="w-[375px] max-md:w-[225px]"
         />
-      </div>
+      </div> */}
       <div className="right-container w-1/2 max-sm:w-[80%] flex  flex-col relative justify-center space-y-32  mx-20">
         {/* <div className="upper-image  justify-start  ml-10">
           <img src={ellipseSvg} alt="" srcSet="" width={"225px"} />
@@ -75,29 +75,23 @@ function FigmaLoginComponent() {
               Welcome Back!
             </h1>
 
-            <div className="flex justify-center  ">
-              <img
-                src="https://www.pngkey.com/png/full/114-1149878_setting-user-avatar-in-specific-size-without-breaking.png"
-                alt=""
-                srcSet=""
-                width={"50px"}
-                className="rounded-full"
-              />
-            </div>
+           
             <form className="w-full" onSubmit={handleSubmit}>
               <div className="flex flex-col  justify-center mt-4 items-center ">
                 <label htmlFor={id + 1} className="w-4/5   text-sm">
                   Email
                 </label>
+                <div className="w-4/5 h-fit rounded-md border border-white mt-1 bg-transparent  pl-2 ">
                 <input
                   id={id + 1}
-                  className="w-4/5 h-10 rounded-lg border-2 border-white mt-1 bg-transparent  pl-2 "
+                  className="w-4/5 h-10 bg-transparent  pl-2 border-none focus:outline-none"
                   type="email"
                   placeholder="Email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
                 />
+                </div>
               </div>
               <div className="flex flex-col  justify-center mt-2 items-center  ">
               <label htmlFor={id + 1} className="w-4/5   text-sm">
@@ -105,7 +99,7 @@ function FigmaLoginComponent() {
                 </label>
                 <input
                   id={id + 2}
-                  className="w-4/5 h-10 rounded-lg border-2 border-white mt-1 bg-transparent  pl-2 "
+                  className="w-4/5 h-10 rounded-md border border-white mt-1 bg-transparent  pl-2 "
                   type="password"
                   placeholder="Password"
                   value={password}

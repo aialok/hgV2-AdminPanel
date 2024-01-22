@@ -25,7 +25,7 @@ import ResultFB from "../components/utility/Result";
 import { useState } from "react";
 import IconSidebar from "../components/navigation/sidebar/IconSidebar";
 
-// import ProtectedRoute from "../components/authentication/ProtectedRoutes";
+import ProtectedRoute from "../components/authentication/ProtectedRoutes";
 export default function Home() {
   const [expand, setExpand] = useState(false);
   const [openSidebar, setOpenSidebar] = useState(false);
@@ -70,7 +70,7 @@ export default function Home() {
             </div>
             <Navbar />
           </div>
-          {/* <ProtectedRoute> */}
+          <ProtectedRoute>
           <Routes>
             <Route path="/announcements" element={<Announcements />} />
             <Route path="/add-announcement" element={<AddNewAnnouncement />} />
@@ -96,7 +96,7 @@ export default function Home() {
 
             <Route path="/result" element={<ResultFB />} />
           </Routes>
-          {/* </ProtectedRoute> */}
+          </ProtectedRoute>
         </div>
       </div>
     </>

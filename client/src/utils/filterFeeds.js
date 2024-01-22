@@ -3,7 +3,7 @@ function haveCommonElement(array1, array2) {
 
    // current logic
    const tagStr = array1[0];
-   console.log(tagStr);
+  
    return array2?.some(element => tagStr?.toLowerCase().includes(element.toLowerCase()));
 }
 

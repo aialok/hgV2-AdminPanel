@@ -9,6 +9,7 @@ export default function Navbar() {
   const { isAuthenticated, user } = useSelector((state) => state.auth);
   const [showUser, setShowUser] = useState(false);
 
+  console.log("isAuth ",isAuthenticated, user);
   const handleLogout = () => {
     localStorage.removeItem("token");
     navigate("/account/login");
@@ -18,7 +19,7 @@ export default function Navbar() {
     <>
       <div className="flex justify-between py-2 px-5 bg-bgSecondary w-full rounded-lg items-center">
         <div className="max-sm:hidden">
-          <h1 className="text-lg font-semibold">Hello, Admin</h1>
+          <h1 className="text-lg font-semibold">Hello, {user? user.name : "Admin"}</h1>
         </div>
         <div />
         <div className="flex gap-2 items-center relative">

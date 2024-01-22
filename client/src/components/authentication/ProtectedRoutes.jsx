@@ -7,7 +7,6 @@ import axios from "axios";
 import { loginSuccess } from "../../redux/slices/authSlice";
 const url = import.meta.env.VITE_APP_BACKEND_URI;
 
-
 const ProtectedRoute = ({ children }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -17,7 +16,7 @@ const ProtectedRoute = ({ children }) => {
 
   const chechAuth = async () => {
     const token = JSON.parse(localStorage.getItem("token"));
-    console.log(token);
+    console.log("token ", token);
     if (token) {
       const res = await axios.get(`${url}/api/users/validate`, {
         headers: {
@@ -28,7 +27,7 @@ const ProtectedRoute = ({ children }) => {
 
       if (res.data.success) {
         dispatch(loginSuccess(res.data.user));
-       
+
         navigate("/");
       } else {
         localStorage.removeItem("token");
